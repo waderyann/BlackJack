@@ -1,10 +1,13 @@
 package cards;
 
+import java.awt.Image;
 import java.util.ArrayList;
 import java.util.List;
 
 public class DeckOfCards {
 	private ArrayList<Card> deck;
+	private Image backOfCardImage;
+	
 	//private Image backOfCardImage;
 	
 	/*
