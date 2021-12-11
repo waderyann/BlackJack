@@ -1,14 +1,23 @@
 package cards;
 
+import java.awt.Image;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+
 public class Card {
 	private String value, suit;
+	private ImageIcon image;
 	
 	public Card(String value, String suit){
 		setValue(value);
 		setSuit(suit);
+		String fileName = value + "_of_" + suit + ".png";
+		image = new ImageIcon(DeckView.class.getResource("/Resource/" + fileName));
+		
 	}
 	
 	public String getValue(String value) {
@@ -55,5 +64,14 @@ public class Card {
 	public String toString() {
 		return String.format("%s of %s", value, suit);
 	}
+
+	public ImageIcon getImage() {
+		return image;
+	}
+
+	public void setImage(ImageIcon imageIcon) {
+		this.image = imageIcon;
+	}
+	
 
 }

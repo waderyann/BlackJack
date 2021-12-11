@@ -38,6 +38,14 @@ public class DeckOfCards {
 	public String toString() {
 		return String.format("%s", deck);
 	}
+	
+	public Card dealCard() {
+		if (deck.size() > 20) {
+			return deck.remove(20);
+		}else{
+			return null;
+		}
+	}
 
 
 }
