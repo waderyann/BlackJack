@@ -10,6 +10,7 @@ import javax.swing.SwingConstants;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
 public class DeckView {
@@ -17,6 +18,7 @@ public class DeckView {
 	private JFrame frame;
 	
 	private JLabel DeckImageView;
+	int count = 0;
 	
 	
 	DeckOfCards deck = new DeckOfCards();
@@ -55,18 +57,23 @@ public class DeckView {
 		frame.getContentPane().setLayout(null);
 		
 		DeckImageView = new JLabel("");
-		DeckImageView.setIcon(new ImageIcon(DeckView.class.getResource("/Resource/10_of_spades.png")));
+		DeckImageView.setIcon(null);
 		DeckImageView.setBounds(127, 37, 500, 726);
 		frame.getContentPane().add(DeckImageView);
 		
-		JButton btnNewButton = new JButton("New button");
-		btnNewButton.addActionListener(new ActionListener() {
+		deck.shuffleDeck();
+		System.out.println(deck.shuffleDeck());
+		
+		
+		JButton nextCard = new JButton("Next Card");
+		nextCard.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				
+				DeckImageView.setIcon(deck.dealCard().getImage());
+				System.out.println(count);
+				count++;
 			}
 		});
-		btnNewButton.setBounds(346, 814, 89, 23);
-		frame.getContentPane().add(btnNewButton);
+		nextCard.setBounds(346, 814, 89, 23);
+		frame.getContentPane().add(nextCard);
 	}
 }

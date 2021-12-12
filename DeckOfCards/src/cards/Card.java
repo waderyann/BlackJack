@@ -54,7 +54,7 @@ public class Card {
 	}
 	
 	public static List<String> getValidValue(){
-		return Arrays.asList("ace","2","3","4","5","6","7","8","9","10","jack","queen","king");
+		return Arrays.asList("2","3","4","5","6","7","8","9","10","jack","queen","king","ace");
 	}
 	
 	public static List<String> getValidSuit(){
@@ -62,7 +62,7 @@ public class Card {
 	}
 	
 	public String toString() {
-		return String.format("%s of %s", value, suit);
+		return String.format("%s_of_%s", value, suit);
 	}
 
 	public ImageIcon getImage() {

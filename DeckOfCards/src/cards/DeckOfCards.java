@@ -2,6 +2,7 @@ package cards;
 
 import java.awt.Image;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class DeckOfCards {
@@ -40,12 +41,25 @@ public class DeckOfCards {
 	}
 	
 	public Card dealCard() {
-		if (deck.size() > 20) {
-			return deck.remove(20);
+		if (deck.size() > 0) {
+			return deck.remove(0);
 		}else{
+			//Runs out of cards to deal
+			System.out.println("Done");
 			return null;
 		}
 	}
-
+	
+	public ArrayList<Card> shuffleDeck() {
+		ArrayList<Card> newDeck = new ArrayList<Card>();
+		
+		while (deck.size() > 0) {
+			int index = (int) (Math.random() * deck.size());
+			newDeck.add(deck.remove(index));
+		}
+		deck = newDeck;
+		return deck;
+	}
+	
 
 }
