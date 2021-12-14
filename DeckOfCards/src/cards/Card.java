@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 public class Card {
 	private String value, suit;
 	private ImageIcon image;
+	private ImageIcon backOfCard;
 	
 	public Card(String value, String suit){
 		setValue(value);
@@ -71,6 +72,15 @@ public class Card {
 
 	public void setImage(ImageIcon imageIcon) {
 		this.image = imageIcon;
+	}
+
+	public ImageIcon getBackOfCard() {
+		backOfCard = new ImageIcon(DeckView.class.getResource("/Resource/BackCard.jpg"));
+		return backOfCard;
+	}
+
+	public void setBackOfCard(ImageIcon backOfCard) {
+		this.backOfCard = backOfCard;
 	}
 	
 

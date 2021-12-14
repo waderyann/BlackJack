@@ -14,9 +14,14 @@ public class Main {
 		System.out.println(card2);
 		*/
 		
-		DeckOfCards deck = new DeckOfCards();
+		//DeckOfCards deck = new DeckOfCards();
 		
-		System.out.println(deck);
+		//System.out.println(deck);
+		
+		BlackJack game = new BlackJack();
+		System.out.println(game.getPlayerHand());
+		System.out.println(game.deck);
+		System.out.println(game.getDealerHand());
 		
 
 	}
