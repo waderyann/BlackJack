@@ -19,9 +19,9 @@ public class Main {
 		//System.out.println(deck);
 		
 		BlackJack game = new BlackJack();
-		System.out.println(game.getPlayerHand());
 		System.out.println(game.deck);
-		System.out.println(game.getDealerHand());
+		System.out.println("Player Hand " + game.getPlayerHand());
+		System.out.println("Dealer Hand " + game.getDealerHand());
 		
 
 	}

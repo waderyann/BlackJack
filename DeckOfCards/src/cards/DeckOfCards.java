@@ -50,6 +50,7 @@ public class DeckOfCards {
 		}
 	}
 	
+	
 	public ArrayList<Card> shuffleDeck() {
 		ArrayList<Card> newDeck = new ArrayList<Card>();
 		

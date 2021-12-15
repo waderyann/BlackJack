@@ -1,30 +1,30 @@
 package cards;
 
+import java.awt.EventQueue;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public class BlackJack {
-	private ArrayList<Card> dealerHand;
-	private ArrayList<Card> playerHand;
+	private ArrayList<Card> dealerHand = new ArrayList<Card>();;
+	private ArrayList<Card> playerHand = new ArrayList<Card>();;
 	DeckOfCards deck = new DeckOfCards();
 	public BlackJack() {
 		
 		deck.shuffleDeck();
-		
-		
-	}
-	
-	public BlackJack(ArrayList<Card> dealerHand, ArrayList<Card> playerHand) {
-		deck.shuffleDeck();
-		this.setDealerHand(dealerHand);
-		this.setPlayerHand(playerHand);
+		setDealerHand(dealerHand);
+		setPlayerHand(playerHand);
 		
 	}
 	
-
+	/*public BlackJack(ArrayList<Card> dealerHand, ArrayList<Card> playerHand) {
+		
+		
+		
+	}*/
 
 	public ArrayList<Card> getPlayerHand() {
+		//System.out.println(deck.dealCard());
 		return playerHand;
 	}
 
@@ -32,6 +32,7 @@ public class BlackJack {
 		for (int i = 0; i < 2; i++) {
 			playerHand.add(deck.dealCard());
 		}
+		
 		this.playerHand = playerHand;
 	}
 
@@ -40,6 +41,9 @@ public class BlackJack {
 	}
 
 	public void setDealerHand(ArrayList<Card> dealerHand) {
+		for (int i = 0; i < 2; i++) {
+			dealerHand.add(deck.dealCard());
+		}
 		this.dealerHand = dealerHand;
 	}
 	
