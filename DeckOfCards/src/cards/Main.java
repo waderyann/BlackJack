@@ -23,7 +23,17 @@ public class Main {
 		System.out.println("Player Hand " + game.getPlayerHand());
 		System.out.println("Dealer Hand " + game.getDealerHand());
 		
-
+		
+		Hand player1 = new Hand("Player");
+		Hand dealer = new Hand("Dealer");
+		System.out.println(player1.getHand());
+		System.out.println(dealer.getHand());
+		
+		
+		Player player = new Player();
+		Player player2 = new Player();
+		System.out.println(player.getHand());
+		System.out.println(player2.getHand());
 	}
 
 }
