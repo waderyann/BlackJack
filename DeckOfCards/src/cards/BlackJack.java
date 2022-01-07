@@ -50,5 +50,13 @@ public class BlackJack {
 	public String toString() {
 		return String.format("%s", playerHand);
 	}
+	
+	public void hitPlayer() {
+		playerHand.add(deck.dealCard());
+	}
+	
+	public void hitDealer() {
+		dealerHand.add(deck.dealCard());
+	}
 
 }
