@@ -22,6 +22,8 @@ public class DeckView {
 	
 	
 	DeckOfCards deck = new DeckOfCards();
+	BlackJack blackJack = new BlackJack();
+	private JLabel DeckImageView1;
 	
 
 	/**
@@ -58,7 +60,7 @@ public class DeckView {
 		
 		DeckImageView = new JLabel("");
 		DeckImageView.setIcon(null);
-		DeckImageView.setBounds(127, 37, 500, 726);
+		DeckImageView.setBounds(10, 36, 500, 726);
 		frame.getContentPane().add(DeckImageView);
 		
 		deck.shuffleDeck();
@@ -68,12 +70,31 @@ public class DeckView {
 		JButton nextCard = new JButton("Next Card");
 		nextCard.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				DeckImageView.setIcon(deck.dealCard().getImage());
-				System.out.println(count);
+				//DeckImageView.setIcon(deck.dealCard().getImage());
+				DeckImageView.setIcon(blackJack.getPlayerHand().get(0).getImage());
+				DeckImageView1.setIcon(blackJack.getPlayerHand().get(1).getImage());
+				System.out.println(blackJack.getPlayerHand());
+				//System.out.println(count);
 				count++;
+				
+				
 			}
 		});
-		nextCard.setBounds(346, 814, 89, 23);
+		nextCard.setBounds(340, 810, 89, 23);
 		frame.getContentPane().add(nextCard);
+		
+		DeckImageView1 = new JLabel("");
+		DeckImageView1.setBounds(520, 36, 500, 726);
+		frame.getContentPane().add(DeckImageView1);
+		
+		JButton hitPlayer = new JButton("Hit");
+		hitPlayer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				blackJack.hitPlayer();
+				System.out.println(blackJack.getPlayerHand());
+			}
+		});
+		hitPlayer.setBounds(461, 810, 89, 23);
+		frame.getContentPane().add(hitPlayer);
 	}
 }
